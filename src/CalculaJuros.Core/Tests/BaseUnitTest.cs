@@ -1,28 +1,24 @@
 ﻿using System.Globalization;
 
-namespace CalculaJuros.Core.Tests
+namespace CalculaJuros.Core.Tests;
+
+public class BaseUnitTest
 {
-    public class BaseUnitTest
+    public BaseUnitTest()
     {
-        public BaseUnitTest()
-        {
+        var culture = new CultureInfo("pt-BR");
+        culture.NumberFormat.NumberDecimalSeparator = ",";
+        culture.NumberFormat.NumberGroupSeparator = ".";
+        culture.NumberFormat.CurrencyDecimalSeparator = ",";
+        culture.NumberFormat.CurrencyGroupSeparator = ".";
 
-            var culture = new CultureInfo("pt-BR");
-            culture.NumberFormat.NumberDecimalSeparator = ",";
-            culture.NumberFormat.NumberGroupSeparator = ".";
-            culture.NumberFormat.CurrencyDecimalSeparator = ",";
-            culture.NumberFormat.CurrencyGroupSeparator = ".";
+        var UIculture = new CultureInfo("pt-BR");
+        UIculture.NumberFormat.NumberDecimalSeparator = ",";
+        UIculture.NumberFormat.NumberGroupSeparator = ".";
+        UIculture.NumberFormat.CurrencyDecimalSeparator = ",";
+        UIculture.NumberFormat.CurrencyGroupSeparator = ".";
 
-            var UIculture = new CultureInfo("pt-BR");
-            UIculture.NumberFormat.NumberDecimalSeparator = ",";
-            UIculture.NumberFormat.NumberGroupSeparator = ".";
-            UIculture.NumberFormat.CurrencyDecimalSeparator = ",";
-            UIculture.NumberFormat.CurrencyGroupSeparator = ".";
-
-            Thread.CurrentThread.CurrentCulture = culture;
-            Thread.CurrentThread.CurrentUICulture = UIculture;
-
-        }
-
+        Thread.CurrentThread.CurrentCulture = culture;
+        Thread.CurrentThread.CurrentUICulture = UIculture;
     }
 }

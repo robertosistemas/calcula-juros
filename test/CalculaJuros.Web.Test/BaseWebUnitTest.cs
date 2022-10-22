@@ -2,20 +2,19 @@
 using CalculaJuros.Web.Services;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CalculaJuros.Web
+namespace CalculaJuros.Web;
+
+public class BaseWebUnitTest : BaseUnitTest
 {
-    public class BaseWebUnitTest : BaseUnitTest
+
+    protected readonly IServiceCollection services;
+    protected readonly IServiceProvider serviceProvider;
+
+    public BaseWebUnitTest()
     {
-
-        protected readonly IServiceCollection services;
-        protected readonly IServiceProvider serviceProvider;
-
-        public BaseWebUnitTest()
-        {
-            services = new ServiceCollection();
-            services.AddTransient<ICalculadoraHttpService, CalculadoraHttpService>();
-            serviceProvider = services.BuildServiceProvider();
-        }
-
+        services = new ServiceCollection();
+        services.AddTransient<ICalculadoraHttpService, CalculadoraHttpService>();
+        serviceProvider = services.BuildServiceProvider();
     }
+
 }

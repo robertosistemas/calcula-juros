@@ -1,7 +1,6 @@
-﻿namespace CalculaJuros.Web.Services
+﻿namespace CalculaJuros.Web.Services;
+
+public interface ICalculadoraHttpService
 {
-    public interface ICalculadoraHttpService
-    {
-        Task<string> CalcularJurosAsync(double valorInicial, int meses);
-    }
+    Task<string> CalcularJurosAsync(double valorInicial, int meses);
 }

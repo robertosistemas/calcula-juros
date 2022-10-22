@@ -3,21 +3,20 @@ using CalculaJuros.Core.Domains;
 using CalculaJuros.Core.Tests;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CalculaJuros.Application
+namespace CalculaJuros.Application;
+
+public class BaseApplicationUnitTest: BaseUnitTest
 {
-    public class BaseApplicationUnitTest: BaseUnitTest
+
+    protected readonly IServiceCollection services;
+    protected readonly IServiceProvider serviceProvider;
+
+    public BaseApplicationUnitTest()
     {
-
-        protected readonly IServiceCollection services;
-        protected readonly IServiceProvider serviceProvider;
-
-        public BaseApplicationUnitTest()
-        {
-            services = new ServiceCollection();
-            services.AddTransient<ICalculadoraService, CalculadoraService>();
-            services.AddTransient<ICalculadoraFinanceiraService, CalculadoraFinanceiraService>();
-            serviceProvider = services.BuildServiceProvider();
-        }
-
+        services = new ServiceCollection();
+        services.AddTransient<ICalculadoraService, CalculadoraService>();
+        services.AddTransient<ICalculadoraFinanceiraService, CalculadoraFinanceiraService>();
+        serviceProvider = services.BuildServiceProvider();
     }
+
 }

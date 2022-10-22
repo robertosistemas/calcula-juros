@@ -1,7 +1,6 @@
-﻿namespace CalculaJuros.Core.Domains
+﻿namespace CalculaJuros.Core.Domains;
+
+public interface ICalculadoraService
 {
-    public interface ICalculadoraService
-    {
-        Calculo CalculaJurosComposto(Calculo calculo);
-    }
+    Calculo CalculaJurosComposto(Calculo calculo);
 }

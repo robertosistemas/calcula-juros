@@ -12,15 +12,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\" />
-    <Folder Include="Areas\Mpa\Controllers\" />
-    <Folder Include="Areas\Mpa\Data\" />
-    <Folder Include="Areas\Mpa\Models\" />
-    <Folder Include="Areas\Mpa\Views\" />
     <Folder Include="Areas\Mpa\Pages\" />
-    <Folder Include="Areas\Spa\Controllers\" />
-    <Folder Include="Areas\Spa\Data\" />
-    <Folder Include="Areas\Spa\Models\" />
-    <Folder Include="Areas\Spa\Views\" />
     <Folder Include="Areas\Spa\Pages\" />
   </ItemGroup>  
 

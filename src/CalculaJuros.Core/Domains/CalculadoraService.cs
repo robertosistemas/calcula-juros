@@ -1,23 +1,21 @@
 ﻿
-namespace CalculaJuros.Core.Domains
+namespace CalculaJuros.Core.Domains;
+
+public class CalculadoraService : ICalculadoraService
 {
-    public class CalculadoraService : ICalculadoraService
+
+    private readonly double _juros;
+
+    public CalculadoraService()
+    {
+        _juros = 0.01;
+    }
+
+    public Calculo CalculaJurosComposto(Calculo calculo)
     {
 
-        private readonly double _juros;
+        calculo.Calcula(_juros);
 
-        public CalculadoraService()
-        {
-            _juros = 0.01;
-        }
-
-        public Calculo CalculaJurosComposto(Calculo calculo)
-        {
-
-            calculo.Calcula(_juros);
-
-            return calculo;
-        }
-
+        return calculo;
     }
 }

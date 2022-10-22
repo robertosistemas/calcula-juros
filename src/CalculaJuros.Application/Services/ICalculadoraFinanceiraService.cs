@@ -1,7 +1,6 @@
-﻿namespace CalculaJuros.Application.Services
+﻿namespace CalculaJuros.Application.Services;
+
+public interface ICalculadoraFinanceiraService
 {
-    public interface ICalculadoraFinanceiraService
-    {
-        CalculoOutputDto CalculaJurosComposto(CalculoInputDto calculoInputDto);
-    }
+    CalculoOutputDto CalculaJurosComposto(CalculoInputDto calculoInputDto);
 }

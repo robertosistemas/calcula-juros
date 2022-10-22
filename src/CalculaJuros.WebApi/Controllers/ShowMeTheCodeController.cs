@@ -1,23 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace CalculaJuros.WebApi.Controllers
+namespace CalculaJuros.WebApi.Controllers;
+
+/// <summary>
+/// Este responde pelo path relativo /showmethecode Deverá retornar a url de onde encontra-se o fonte no github
+/// </summary>
+[Route("[controller]")]
+[ApiController]
+public class ShowMeTheCodeController : ControllerBase
 {
 
-    /// <summary>
-    /// Este responde pelo path relativo /showmethecode Deverá retornar a url de onde encontra-se o fonte no github
-    /// </summary>
-    [Route("[controller]")]
-    [ApiController]
-    public class ShowMeTheCodeController : ControllerBase
+    [HttpGet]
+    public ActionResult<string> Get()
     {
-
-        [HttpGet]
-        public ActionResult<string> Get()
-        {
-            return "https://github.com/robertosistemas/CalculaJuros";
-        }
-
+        return "https://github.com/robertosistemas/CalculaJuros";
     }
-
 
 }
