@@ -1,0 +1,24 @@
+version: '3.5'
+
+services:
+  calculajurosweb:
+    image: calculajurosweb
+    build:
+      context: .
+      dockerfile: ../CalculaJuros.Web/Dockerfile
+    depends_on:
+      - "calculajuroswebapi"
+    networks:
+      - calculajuros-network
+
+  calculajuroswebapi:
+    image: calculajuroswebapi
+    build:
+      context: .
+      dockerfile: ../CalculaJuros.WebApi/Dockerfile
+    networks:
+      - calculajuros-network
+
+networks: 
+    calculajuros-network:
+        driver: bridge

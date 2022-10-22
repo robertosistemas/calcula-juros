@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>fd44a2ff-31b5-4ebe-8933-61dc45d7fd5e</UserSecretsId>
+    <DockerTargetOS>Windows</DockerTargetOS>
+    <DockerComposeProjectPath>..\CalculaJuros.Docker\docker-compose.dcproj</DockerComposeProjectPath>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CalculaJuros.Application\CalculaJuros.Application.csproj" />
+    <ProjectReference Include="..\CalculaJuros.Core\CalculaJuros.Core.csproj" />
+  </ItemGroup>
+
+</Project>
